@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Busreservation</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <%= render "layouts/header"%>
+    <%# <header>
+      <%= link_to "Buses",busdetails_path,class: "button" %>
+      <%# <%= link_to "Users",users_path,class: "button"  %> 
+      <%# <% if current_user %> 
+        <%# <%= link_to current_user.name, current_user %> 
+        <%# <%= link_to "Sign Out", session_path, data: { turbo_method: :delete }, class: :button %> 
+        
+      <%# <% else %> 
+        <%# <%= link_to "Sign Up",signup_path,class: "button" %> 
+        <%# <%= link_to "Sign In",signin_path, class: "button" %> 
+      <%# <% end %> 
+      
+    <%# </header> %> 
+    <div class="content" >
+      <%= yield %>
+    </div>
+  
+  <%# <%= render "layouts/footer" %> 
+
+    <%# <%= yield %> 
+  </body>
+</html>

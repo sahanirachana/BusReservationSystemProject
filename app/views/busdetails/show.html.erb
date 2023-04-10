@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @busdetail %>
+
+<div class >
+  <% if current_user_owner? %>
+    <section class = "owner" >
+      <p><%= link_to "Edit", edit_busdetail_path(@busdetail),class: "button" %></p>
+      <p><%= button_to "Destroy", @busdetail, method: :delete,class: "button" %></p>
+      <p><%= link_to "Show Reservations",busdetail_reservations_path(@busdetail),class: "button"%></p>
+      
+    </section>
+  <% end %>
+</div>
+<%# <%= link_to "Back to busdetails", busdetails_path %> 
+<%# <% if params[:session].present? %> 
+   <%= link_to "Book Ticket", new_busdetail_reservation_path(@busdetail),class: :button %> 
+   <%# <%= link_to "Cancel Ticket",[@busdetail,@reservation], data: {turbo_method: "delete"} %>  
+
+     

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bus_name: MyString
+  bus_no: MyString
+  total_seats: 1
+  available_seats: 1
+  start_time: MyString
+  end_time: MyString
+
+two:
+  bus_name: MyString
+  bus_no: MyString
+  total_seats: 1
+  available_seats: 1
+  start_time: MyString
+  end_time: MyString

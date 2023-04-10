@@ -1,0 +1,36 @@
+<%= form_with(model: @user) do |form| %>
+    
+
+  <div>
+    <%= form.label :Name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :Contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div>
+    <%= form.label :Email, style: "display: block" %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+   <%= form.hidden_field :user_type, value: "Customer" %>
+  </div>
+  
+  <div>
+    <%= form.label :Password, style: "display: block" %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :Confirm_Password, style: "display: block" %>
+    <%= form.password_field :Confirm_password %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

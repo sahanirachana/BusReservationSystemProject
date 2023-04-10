@@ -1,0 +1,8 @@
+<h1>Reservations for <%= link_to @busdetail.bus_name, @busdetail %></h1>
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li>
+      <%= reservation.passenger %>
+    </li>
+  <% end %>
+</ul>

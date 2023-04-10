@@ -1,0 +1,33 @@
+<h1>New Reservation for <%= link_to @busdetail.bus_name, @busdetail %></h1>
+<%= form_with(model: [@busdetail, @reservation]) do |f| %>
+
+<div>
+    <%= f.label :passenger,style: "display: block"%>
+    <%= f.text_field :passenger, autofocus: true %>
+</div>
+
+<div>
+    <%= f.label :no_of_seat,style: "display: block"%>
+    <%= f.number_field :no_of_seat, autofocus: true %>
+</div>
+
+<div>
+    <%= f.label :from,style: "display: block" %>
+    <%= f.text_field :from, autofocus: true %>
+</div>
+
+<div>
+  <%= f.label :to,style: "display: block"%>
+  <%= f.text_field :to, autofocus: true %>
+</div>
+
+<div>
+  <%= f.label :date_of_journey,style: "display: block"%>
+  <%= f.date_field :date_of_journey, autofocus: true %>
+</div>
+
+
+<div>
+  <%= f.submit "Book" %>
+</div>
+<% end %>

@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= form_tag(busdetails_path, :method => "get", id: "search-form", remote: true) do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<h1>BusList</h1>
+
+<div id="busdetails">
+  <% @busdetails.each do |busdetail| %>
+    <p>
+      <%= busdetail.bus_name %>
+      <%= link_to "Show", busdetail %>
+    </p>
+  <% end %>
+</div>
+<% if current_user_owner? %>
+  <%= link_to "New", new_busdetail_path %>
+<% end %>

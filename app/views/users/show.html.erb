@@ -1,0 +1,53 @@
+<h1><%= @user.name %></h1>
+<p>Contact :<%= @user.contact %></p>
+<p>Email :<%= @user.email %></p>
+<%# <p>User Type :<%= @user.user_type %></p> 
+<% if current_user == @user %>
+    <%= link_to "Edit User",edit_user_path(@user) %> |
+    <%= button_to "Destroy User", @user, method: :delete %>
+<% end %>
+
+<% if @user.owner %>
+    <h3>Buses</h3>
+    <% @buses.each do |bus| %>
+        <li>
+            <%= link_to bus.bus_name,busdetail_path(bus) %>
+        </li>
+    <% end %>
+<% end %>
+
+<h3>Reservations </h3>
+
+<% @reservations.each do |reservation| %>
+<table>
+    <tr>
+        <th> <%= "Bus Name" %></th>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <th> <%= "Passenger " %></th>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <th> <%= "Source" %></th>
+        <td>&nbsp;</td><td>&nbsp;</td>
+        <th> <%= "Destination" %></th><td>&nbsp;</td><td>&nbsp;</td>
+        <%# <th><%= "num_of_seat  "%>
+        <%# <td>&nbsp;</td><td>&nbsp;</td> %> 
+        <th> <%= "Date" %></th>
+    </tr>
+    <tr>
+        <td><b><%= reservation.busdetail.bus_name %><b><td>
+        <td>&nbsp;</td><td>&nbsp;</td>
+        <td><%= reservation.passenger %></td>
+        <td>&nbsp;</td><td>&nbsp;</td>
+        <td><%= reservation.from %></td>
+        <td>&nbsp;</td><td>&nbsp;</td>
+        <td><%= reservation.to %></td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <%# <td><%= reservation.no_of_seat %>
+        <td>&nbsp;</td><td>&nbsp;</td> 
+        <td><%= reservation.date_of_journey %></td>
+    </tr>
+</table>
+
+        <% bus_detail = reservation.busdetail.id %>
+        <%= button_to "Cancel Ticket",busdetail_reservation_path(bus_detail,reservation), method: :delete %>  
+
+<% end %>

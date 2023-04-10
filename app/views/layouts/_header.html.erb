@@ -1,0 +1,19 @@
+<header>
+    <nav>
+      <ul class="left">
+        <%= link_to image_tag("bus"),busdetails_path %>
+        <li>
+          <%= link_to " All Buses",busdetails_path %>
+        </li>
+      </ul>
+      <ul class="right">
+        <% if current_user %>
+          <li><%= link_to current_user.name, current_user %></li>
+          <li><%= link_to "Sign Out",session_path, data: { turbo_method: :delete }, class: "button" %>
+        <% else %>
+          <%= link_to "Sign In",signin_path,class: "button" %>
+          <%= link_to "Signup",signup_path,class: "button" %>
+        <%end %>
+      </ul>
+    </nav> 
+</header>
